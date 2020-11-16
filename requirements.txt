@@ -3,3 +3,4 @@ gunicorn
 Flask-Cors
 pyttsx3eaidk
 PyPDF2
+speake3
