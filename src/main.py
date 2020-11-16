@@ -3,7 +3,6 @@ from flask_cors import CORS
 from utils import APIException
 import pyttsx3
 import PyPDF2
-import speake3
 
 book = open('book.pdf', 'rb')
 
@@ -24,7 +23,7 @@ def hello_world():
 def read_pdf():
     pdfReader = PyPDF2.PdfFileReader(book)
     pages = pdfReader.numPages
-    speaker = pyttsx3.init(speake3)
+    speaker = pyttsx3.init()
 
     for num in range(20, pages):
         page = pdfReader.getPage(num)
