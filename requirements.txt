@@ -1,5 +1,6 @@
 Flask
 gunicorn
 Flask-Cors
-pyttsx3eaidk
+pyttsx3
 PyPDF2
+speake3
