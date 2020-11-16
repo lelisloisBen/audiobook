@@ -22,7 +22,7 @@ def hello_world():
 @app.route('/read')
 def read_pdf():
     
-    engine = pyttsx3.init()
+    engine = pyttsx3.init(py-espeak-ng)
     engine.say("I will speak this text")
     engine.runAndWait()
 
