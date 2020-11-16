@@ -6,6 +6,17 @@ import pyttsx3
 
 # book = open('book.pdf', 'rb')
 
+def text_to_speech(text, gender):
+    voice_dict = {'Male': 0, 'Female': 1}
+    code = voice_dict[gender]
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 125)
+    engine.setProperty('volume', 0.8)
+    voices = engine.getProperty('voices')
+    engine.setProperty('voice', voices[code].id)
+    engine.say(text)
+    engine.runAndWait()
+
 
 app = Flask(__name__)
 CORS(app)
@@ -22,9 +33,8 @@ def hello_world():
 @app.route('/read')
 def read_pdf():
     
-    engine = pyttsx3.init(py-espeak-ng)
-    engine.say("I will speak this text")
-    engine.runAndWait()
+    text_to_speech("hello samir, how are you tonight?", "Male")
+    text_to_speech("hello samir, how are you tonight?", "Female")
 
 
 # this only runs if `$ python src/main.py` is executed
