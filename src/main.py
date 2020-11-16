@@ -24,7 +24,7 @@ def read_pdf():
     pages = pdfReader.numPages
     speaker = pyttsx3.init()
 
-    for num range(20, pages):
+    for num in range(20, pages):
         page = pdfReader.getPage(num)
         text = page.extractText()
         speaker.say(text)
