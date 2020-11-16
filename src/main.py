@@ -4,6 +4,8 @@ from utils import APIException
 import pyttsx3
 import PyPDF2
 
+book = open('book.pdf', 'rb')
+
 
 app = Flask(__name__)
 CORS(app)
@@ -19,7 +21,6 @@ def hello_world():
 
 @app.route('/read')
 def read_pdf():
-    book = open('book.pdf', 'rb')
     pdfReader = PyPDF2.PdfFileReader(book)
     pages = pdfReader.numPages
     speaker = pyttsx3.init()
