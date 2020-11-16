@@ -3,3 +3,6 @@ gunicorn
 Flask-Cors
 pyttsx3
 PyPDF2
+espeak
+ffmpeg
+libespeak1
