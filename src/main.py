@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utils import APIException
 import pyttsx3
-import PyPDF2
+# import PyPDF2
 
 # book = open('book.pdf', 'rb')
 
@@ -21,20 +21,10 @@ def hello_world():
 
 @app.route('/read')
 def read_pdf():
-    # pdfReader = PyPDF2.PdfFileReader(book)
-    # pages = pdfReader.numPages
-    text = "Hello samir, how are you today?" 
     speaker = pyttsx3.init()
 
-    speaker.say(text)
+    speaker.say("Hello samir, how are you today?")
     speaker.runAndWait()
-
-
-    # for num in range(20, pages):
-    #     page = pdfReader.getPage(num)
-    #     text = page.extractText()
-    #     speaker.say(text)
-    #     speaker.runAndWait()
 
 
 # this only runs if `$ python src/main.py` is executed
