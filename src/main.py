@@ -4,7 +4,7 @@ from utils import APIException
 import pyttsx3
 import PyPDF2
 
-book = open('book.pdf', 'rb')
+# book = open('book.pdf', 'rb')
 
 
 app = Flask(__name__)
@@ -21,15 +21,20 @@ def hello_world():
 
 @app.route('/read')
 def read_pdf():
-    pdfReader = PyPDF2.PdfFileReader(book)
-    pages = pdfReader.numPages
+    # pdfReader = PyPDF2.PdfFileReader(book)
+    # pages = pdfReader.numPages
+    text = "Hello samir, how are you today?" 
     speaker = pyttsx3.init()
 
-    for num in range(20, pages):
-        page = pdfReader.getPage(num)
-        text = page.extractText()
-        speaker.say(text)
-        speaker.runAndWait()
+    speaker.say(text)
+    speaker.runAndWait()
+
+
+    # for num in range(20, pages):
+    #     page = pdfReader.getPage(num)
+    #     text = page.extractText()
+    #     speaker.say(text)
+    #     speaker.runAndWait()
 
 
 # this only runs if `$ python src/main.py` is executed
