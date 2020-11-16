@@ -21,10 +21,10 @@ def hello_world():
 
 @app.route('/read')
 def read_pdf():
-    speaker = pyttsx3.init()
-
-    speaker.say("Hello samir, how are you today?")
-    speaker.runAndWait()
+    
+    engine = pyttsx3.init()
+    engine.say("I will speak this text")
+    engine.runAndWait()
 
 
 # this only runs if `$ python src/main.py` is executed
